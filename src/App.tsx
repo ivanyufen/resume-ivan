@@ -79,18 +79,18 @@ export default function LandingPage() {
           <h3 className="text-xl font-bold mb-4">Experience</h3>
 
           <div className="bg-gray-900 rounded-xl p-4 mb-4 border border-gray-800">
-            <p className="font-semibold">Frontend Developer — XYZ Company</p>
-            <p className="text-gray-400 text-sm">2023 – Present</p>
+            <p className="font-semibold">Frontend Developer — Travelio</p>
+            <p className="text-gray-400 text-sm">2019 – Present</p>
             <p className="text-gray-400 mt-2">
-              Build high-quality web apps using React, Next.js, and TypeScript.
+              Develop high-quality web and apps using Next.js and React Native.
             </p>
           </div>
 
           <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
-            <p className="font-semibold">UI/UX Designer — Freelance</p>
-            <p className="text-gray-400 text-sm">2021 – 2023</p>
+            <p className="font-semibold">Frontend Developer — Mileapp</p>
+            <p className="text-gray-400 text-sm">2019</p>
             <p className="text-gray-400 mt-2">
-              Designed intuitive mobile-first interfaces and wireframes.
+              Develop a landing page and web applications using Vue.js
             </p>
           </div>
         </section>
@@ -100,12 +100,19 @@ export default function LandingPage() {
           <h3 className="text-xl font-bold mb-4">Skills</h3>
           <div className="flex flex-wrap gap-2">
             {[
+              "HTML",
+              "css",
               "React",
+              "React Native",
               "Next.js",
               "TypeScript",
               "TailwindCSS",
               "Redux",
               "UI/UX",
+              "Node.js",
+              "Express",
+              "GIT",
+              "Unit Testing",
             ].map((s) => (
               <span
                 key={s}
