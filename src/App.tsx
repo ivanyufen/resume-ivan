@@ -1,8 +1,4 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-import Hero from "./components/Hero";
 import { useTypewriter } from "./hooks/useTypewriter";
 import ContactSection from "./components/Contact";
 export default function LandingPage() {
