@@ -1,0 +1,129 @@
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import Hero from "./components/Hero";
+import { useTypewriter } from "./hooks/useTypewriter";
+import ContactSection from "./components/Contact";
+export default function LandingPage() {
+  const text = useTypewriter([
+    "Frontend Developer",
+    "React / Next.js Engineer",
+    "UI/UX Enthusiast",
+  ]);
+
+  return (
+    <div
+      className="w-screen w-full bg-white text-white
+                flex justify-center items-start md:items-center"
+    >
+      <div className="w-full max-w-lg px-6 py-10 bg-gray-950">
+        {/* Profile picture */}
+        <div className="flex justify-center mb-6">
+          <img
+            src="profile.jpeg"
+            alt="Ivan's Profile Picture"
+            className="w-36 h-36 rounded-full border-4 border-indigo-500 shadow-xl object-cover"
+          />
+        </div>
+
+        {/* HERO */}
+        <section className="text-center mb-12">
+          <h1 className="text-4xl font-bold">
+            Hello, I'm{" "}
+            <span className="bg-gradient-to-r from-indigo-400 to-blue-600 bg-clip-text text-transparent">
+              Ivan
+            </span>
+          </h1>
+
+          <h2 className="text-2xl font-semibold mt-2 h-10">
+            <span>{text}</span>
+            <span className="animate-pulse">|</span>
+          </h2>
+
+          <p className="text-gray-400 mt-4">
+            I build elegant, fast, and modern web apps with React, TypeScript,
+            and Next.js.
+          </p>
+
+          <div className="mt-8 flex gap-4 justify-center">
+            <a
+              href="#experience"
+              className="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 transition shadow-lg shadow-indigo-600/30"
+            >
+              Experience
+            </a>
+            <a
+              href="#contact"
+              className="px-6 py-3 rounded-xl border border-gray-600 hover:border-indigo-500 transition"
+            >
+              Contact
+            </a>
+          </div>
+        </section>
+
+        {/* ABOUT */}
+        <section id="about" className="mb-10">
+          <h3 className="text-xl font-bold mb-2">About Me</h3>
+          <p className="bg-gradient-to-r from-indigo-200 via-white-200 to-indigo-200 bg-clip-text text-transparent">
+            A software engineer with 5+ yoe in Front-end development, passionate
+            about creating user-friendly, responsive, and visually stunning web
+            applications. I love solving problem and enjoy collaborating with
+            other teams to deliver high-quality app for the user's solution.
+            Committed to stay relevant with newer technologies and am always
+            eager to learn and adapt. My strong foundation in front-end
+            technologies, combined with my dedication to continuous improvement,
+            hopefully makes me a valuable asset to any team seeking to build a
+            great web and app experiences
+          </p>
+        </section>
+
+        {/* EXPERIENCE */}
+        <section id="experience" className="mb-10">
+          <h3 className="text-xl font-bold mb-4">Experience</h3>
+
+          <div className="bg-gray-900 rounded-xl p-4 mb-4 border border-gray-800">
+            <p className="font-semibold">Frontend Developer — XYZ Company</p>
+            <p className="text-gray-400 text-sm">2023 – Present</p>
+            <p className="text-gray-400 mt-2">
+              Build high-quality web apps using React, Next.js, and TypeScript.
+            </p>
+          </div>
+
+          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
+            <p className="font-semibold">UI/UX Designer — Freelance</p>
+            <p className="text-gray-400 text-sm">2021 – 2023</p>
+            <p className="text-gray-400 mt-2">
+              Designed intuitive mobile-first interfaces and wireframes.
+            </p>
+          </div>
+        </section>
+
+        {/* SKILLS */}
+        <section id="skills" className="mb-10">
+          <h3 className="text-xl font-bold mb-4">Skills</h3>
+          <div className="flex flex-wrap gap-2">
+            {[
+              "React",
+              "Next.js",
+              "TypeScript",
+              "TailwindCSS",
+              "Redux",
+              "UI/UX",
+            ].map((s) => (
+              <span
+                key={s}
+                className="px-3 py-1 bg-gray-900 border border-gray-700 rounded-lg text-sm"
+              >
+                {s}
+              </span>
+            ))}
+          </div>
+        </section>
+
+        {/* CONTACT */}
+        <ContactSection />
+      </div>
+    </div>
+  );
+}
