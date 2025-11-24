@@ -62,15 +62,13 @@ export default function LandingPage() {
         <section id="about" className="mb-10">
           <h3 className="text-xl font-bold mb-2">About Me</h3>
           <p className="bg-gradient-to-r from-indigo-200 via-white-200 to-indigo-200 bg-clip-text text-transparent">
-            A software engineer with 5+ yoe in Front-end development, passionate
-            about creating user-friendly, responsive, and visually stunning web
-            applications. I love solving problem and enjoy collaborating with
-            other teams to deliver high-quality app for the user's solution.
-            Committed to stay relevant with newer technologies and am always
-            eager to learn and adapt. My strong foundation in front-end
-            technologies, combined with my dedication to continuous improvement,
-            hopefully makes me a valuable asset to any team seeking to build a
-            great web and app experiences
+            Frontend Engineer with 6 years of experience building scalable,
+            responsive, and user-focused web applications. Skilled in React,
+            React Native, Next.js, and modern JavaScript frameworks, with a
+            proven track record of delivering high-quality features across
+            desktop, mobile web, and apps. Passionate about solving problems,
+            collaborating across teams, and staying current with emerging
+            technologies. Let's collaborate!
           </p>
         </section>
 
