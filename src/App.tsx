@@ -1,12 +1,17 @@
 import "./App.css";
 import { useTypewriter } from "./hooks/useTypewriter";
 import ContactSection from "./components/Contact";
+import { useEffect } from "react";
 export default function LandingPage() {
   const text = useTypewriter([
     "Frontend Developer",
     "React / Next.js Engineer",
     "UI/UX Enthusiast",
   ]);
+
+  useEffect(() => {
+    console.log("Oh, hello there! 👋 Welcome to my landing page :)");
+  }, []);
 
   return (
     <div
