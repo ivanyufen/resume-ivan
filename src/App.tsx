@@ -1,7 +1,9 @@
 import "./App.css";
 import { useTypewriter } from "./hooks/useTypewriter";
 import ContactSection from "./components/Contact";
+import ExperienceSection from "./components/Experience";
 import { useEffect } from "react";
+
 export default function LandingPage() {
   const text = useTypewriter([
     "Frontend Developer",
@@ -78,25 +80,39 @@ export default function LandingPage() {
         </section>
 
         {/* EXPERIENCE */}
-        <section id="experience" className="mb-10">
-          <h3 className="text-xl font-bold mb-4">Experience</h3>
+        <ExperienceSection />
 
-          <div className="bg-gray-900 rounded-xl p-4 mb-4 border border-gray-800">
-            <p className="font-semibold">Frontend Developer — Travelio</p>
-            <p className="text-gray-400 text-sm">2019 – Present</p>
-            <p className="text-gray-400 mt-2">
-              Develop high-quality web and apps using Next.js and React Native.
-            </p>
-          </div>
+        {/* <section id="experience" className="mb-10">
+  <h3 className="text-xl font-bold mb-6">Experience</h3>
 
-          <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
-            <p className="font-semibold">Frontend Developer — Mileapp</p>
-            <p className="text-gray-400 text-sm">2019</p>
-            <p className="text-gray-400 mt-2">
-              Develop a landing page and web applications using Vue.js
-            </p>
-          </div>
-        </section>
+  <div className="relative border-l-2 border-gray-700 pl-8 space-y-10">
+
+    <div className="relative">
+      <div
+        className="absolute -left-[13px] top-1 w-6 h-6 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 border-2 border-gray-900"
+      ></div>
+
+      <h4 className="font-semibold">Frontend Developer — Travelio</h4>
+      <p className="text-gray-400 text-sm">2019 – Present</p>
+      <p className="text-gray-400 mt-2">
+        Develop high-quality web and apps using Next.js and React Native.
+      </p>
+    </div>
+
+    <div className="relative">
+      <div
+        className="absolute -left-[13px] top-1 w-6 h-6 rounded-full bg-gradient-to-r from-blue-500 to-teal-400 border-2 border-gray-900"
+      ></div>
+
+      <h4 className="font-semibold">Frontend Developer — Mileapp</h4>
+      <p className="text-gray-400 text-sm">2019</p>
+      <p className="text-gray-400 mt-2">
+        Develop a landing page and web applications using Vue.js.
+      </p>
+    </div>
+
+  </div>
+</section> */}
 
         {/* SKILLS */}
         <section id="skills" className="mb-10">
