@@ -36,7 +36,7 @@ export default function ExperienceSection() {
   );
 }
 
-function TimelineItem({ side, title, date, desc }) {
+function TimelineItem({ side = "", title = "", date = "", desc = "" }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 

@@ -12,7 +12,8 @@ export default function LandingPage() {
   ]);
 
   useEffect(() => {
-    console.log("Oh, hello there! 👋 Welcome to my landing page :)");
+    console.log(`Oh, hello there! 👋
+      Welcome to my landing page :)`);
   }, []);
 
   return (
