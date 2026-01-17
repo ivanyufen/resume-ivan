@@ -31,6 +31,12 @@ export default function ExperienceSection() {
           date="2019"
           desc="Developed landing pages and internal tools using Vue.js."
         />
+        <TimelineItem
+          side="right"
+          title="IT Support (Volunteer) — IGBS Asian Games"
+          date="2018"
+          desc="Support the IT team of IGBS in maintaining and troubleshooting computer systems and networks for Asian Games 2018."
+        />
       </div>
     </section>
   );
@@ -52,7 +58,7 @@ function TimelineItem({ side = "", title = "", date = "", desc = "" }) {
     >
       {/* TEXT (Desktop) */}
       <div
-        className={`hidden sm:block w-1/2 ${
+        className={`sm:block w-1/2 ${
           side === "right" ? "pl-8" : "pr-8 text-right"
         }`}
       >
@@ -72,7 +78,7 @@ function TimelineItem({ side = "", title = "", date = "", desc = "" }) {
       </div>
 
       {/* TEXT (Mobile) */}
-      <div
+      {/* <div
         className={`sm:hidden w-1/2 ${
           side === "right" ? "pr-8 text-right" : "pl-8"
         }`}
@@ -80,7 +86,7 @@ function TimelineItem({ side = "", title = "", date = "", desc = "" }) {
         <p className="font-semibold">{title}</p>
         <p className="text-gray-400 text-sm">{date}</p>
         <p className="text-gray-400 mt-2">{desc}</p>
-      </div>
+      </div> */}
     </motion.div>
   );
 }
