@@ -1,92 +1,119 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
+const ACCENT_COLORS = ["#FFD60A", "#C8F56A", "#00F5D4", "#FFB3C6"];
+
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="mb-16">
-      <h3 className="text-xl font-bold mb-10 text-center">Experience</h3>
+    <section id="experience" className="mb-8">
+      <div className="border-4 border-black bg-white p-6 shadow-[6px_6px_0_#000]">
+        <h3 className="text-xl font-black uppercase tracking-wide mb-6 pb-2 border-b-4 border-black">
+          Experience
+        </h3>
 
-      <div className="relative max-w-lg mx-auto">
-        {/* Vertical Line */}
-        <div className="absolute left-1/2 top-0 h-full w-[3px] bg-gray-700 transform -translate-x-1/2"></div>
-
-        {/* ITEMS */}
-        <TimelineItem
-          side="left"
-          title="Frontend Developer — Travelio"
-          date="2019 – Present"
-          desc="Develop high-quality web and mobile applications using Next.js and React Native."
-        />
-
-        <TimelineItem
-          side="right"
-          title="Frontend Developer — Mileapp"
-          date="2019"
-          desc="Developed landing pages and web tools using Vue.js."
-        />
-
-        <TimelineItem
-          side="left"
-          title="Full-Stack Developer & Business Analyst (Intern) — Nutrifood"
-          date="2019"
-          desc="Developed landing pages and internal tools using Vue.js."
-        />
-        <TimelineItem
-          side="right"
-          title="IT Support (Volunteer) — IGBS Asian Games"
-          date="2018"
-          desc="Support the IT team of IGBS in maintaining and troubleshooting computer systems and networks for Asian Games 2018."
-        />
+        <div className="flex flex-col gap-4">
+          <ExperienceCard
+            title="Senior Software Engineer (Frontend)"
+            company="Travelio"
+            companyLink="https://www.linkedin.com/company/travelio-com"
+            date="2026 – Present"
+            desc="Lead architecture and development of scalable web and mobile applications using Next.js and React Native, driving frontend best practices."
+            accent={ACCENT_COLORS[0]}
+          />
+          <ExperienceCard
+            title="Software Engineer (Frontend)"
+            company="Travelio"
+            companyLink="https://www.linkedin.com/company/travelio-com"
+            date="2019 – 2026"
+            desc="Maintain and develop high impact web and mobile app using Next.js and RN, collaborating with Product and UI/UX to solve user problem and enhancing the product experience."
+            accent={ACCENT_COLORS[0]}
+          />
+          <ExperienceCard
+            title="Software Engineer (Frontend)"
+            company="Mileapp"
+            companyLink="https://www.linkedin.com/company/mileapp"
+            date="2019"
+            desc="Developed landing pages and web tools using Vue.js."
+            accent={ACCENT_COLORS[1]}
+          />
+          <ExperienceCard
+            title="Full-Stack Developer & Business Analyst (Intern)"
+            company="Nutrifood"
+            companyLink="https://www.linkedin.com/company/pt-nutrifood-indonesia"
+            date="2019"
+            desc="Developed landing pages and internal tools using Vue.js."
+            accent={ACCENT_COLORS[2]}
+          />
+          <ExperienceCard
+            title="IT Support (Volunteer)"
+            company="IGBS Asian Games / HBS"
+            companyLink="https://www.linkedin.com/company/hbs"
+            date="2018"
+            desc="Maintained and troubleshot computer systems and networks for Asian Games 2018."
+            accent={ACCENT_COLORS[3]}
+          />
+        </div>
       </div>
     </section>
   );
 }
 
-function TimelineItem({ side = "", title = "", date = "", desc = "" }) {
+function ExperienceCard({
+  title,
+  company,
+  companyLink,
+  date,
+  desc,
+  accent,
+}: {
+  title: string;
+  company: string;
+  companyLink?: string;
+  date: string;
+  desc: string;
+  accent: string;
+}) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 40 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`mb-12 flex items-center w-full ${
-        side === "right" ? "flex-row-reverse" : ""
-      }`}
+      initial={{ opacity: 0, x: -20 }}
+      animate={isInView ? { opacity: 1, x: 0 } : {}}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      whileHover={{
+        rotate: [0, -2.5, 2, -1, 0],
+        transition: {
+          duration: 0.35,
+          ease: "easeInOut",
+          times: [0, 0.2, 0.6, 0.8, 1],
+        },
+      }}
+      className="border-[3px] border-black p-4 shadow-[4px_4px_0_#000] cursor-default"
+      style={{ backgroundColor: accent }}
     >
-      {/* TEXT (Desktop) */}
-      <div
-        className={`sm:block w-1/2 ${
-          side === "right" ? "pl-8" : "pr-8 text-right"
-        }`}
-      >
-        <p className="font-semibold">{title}</p>
-        <p className="text-gray-400 text-sm">{date}</p>
-        <p className="text-gray-400 mt-2">{desc}</p>
+      <div className="flex items-start justify-between gap-2 flex-wrap">
+        <div>
+          <p className="font-black text-sm uppercase tracking-wide">{title}</p>
+          {companyLink ? (
+            <a
+              href={companyLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-base underline underline-offset-2 hover:opacity-70 transition-opacity"
+            >
+              {company}
+            </a>
+          ) : (
+            <p className="font-bold text-base">{company}</p>
+          )}
+        </div>
+        <span className="text-xs font-black uppercase border-2 border-black bg-white px-2 py-1 shrink-0">
+          {date}
+        </span>
       </div>
-
-      {/* DOT */}
-      <div className="relative">
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={isInView ? { scale: 1 } : {}}
-          transition={{ delay: 0.2, duration: 0.4 }}
-          className="w-6 h-6 bg-indigo-500 rounded-full border-[6px] border-gray-900"
-        ></motion.div>
-      </div>
-
-      {/* TEXT (Mobile) */}
-      {/* <div
-        className={`sm:hidden w-1/2 ${
-          side === "right" ? "pr-8 text-right" : "pl-8"
-        }`}
-      >
-        <p className="font-semibold">{title}</p>
-        <p className="text-gray-400 text-sm">{date}</p>
-        <p className="text-gray-400 mt-2">{desc}</p>
-      </div> */}
+      <p className="mt-2 text-sm font-medium text-gray-900">{desc}</p>
     </motion.div>
   );
 }

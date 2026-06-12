@@ -4,11 +4,40 @@ import ContactSection from "./components/Contact";
 import ExperienceSection from "./components/Experience";
 import { useEffect } from "react";
 
+const SKILLS = [
+  "HTML",
+  "CSS",
+  "React",
+  "React Native",
+  "Next.js",
+  "TailwindCSS",
+  "Vite",
+  "Vue.js",
+  "SEO",
+  "Redux",
+  "UI/UX",
+  "Node.js",
+  "Express.js",
+  "GIT",
+  "Unit Testing",
+  "TypeScript",
+  "Agentic AI",
+];
+
+const SKILL_COLORS = [
+  "bg-[#FFD60A]",
+  "bg-[#C8F56A]",
+  "bg-[#00F5D4]",
+  "bg-[#FFB3C6]",
+  "bg-[#A0D9FF]",
+  "bg-[#FFC987]",
+];
+
 export default function LandingPage() {
   const text = useTypewriter([
-    "Frontend Developer",
-    "React / Next.js Engineer",
-    "UI/UX Enthusiast",
+    "Senior Frontend Engineer",
+    "App Developer",
+    "Web Enthusiast",
   ]);
 
   useEffect(() => {
@@ -17,49 +46,56 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div
-      className="w-screen w-full bg-white text-white
-                flex justify-center items-start md:items-center"
-    >
-      <div className="w-full max-w-lg px-6 py-10 bg-gray-950">
+    <div className="min-h-screen w-full bg-[#FFF9E6] text-black flex justify-center items-start py-10 px-4">
+      <div className="w-full max-w-lg">
         {/* Profile picture */}
-        <div className="flex justify-center mb-6">
-          <img
-            src="profile.jpeg"
-            alt="Ivan's Profile Picture"
-            className="w-36 h-36 rounded-full border-4 border-indigo-500 shadow-xl object-cover"
-          />
+        <div className="flex justify-center mb-8">
+          <div className="border-4 border-black shadow-[8px_8px_0_#000]">
+            <img
+              src="profile.jpeg"
+              alt="Ivan's Profile Picture"
+              className="w-36 h-36 object-cover block"
+            />
+          </div>
         </div>
 
         {/* HERO */}
-        <section className="text-center mb-12">
-          <h1 className="text-4xl font-bold">
+        <section className="mb-10 text-center">
+          <h1 className="text-5xl font-black tracking-tight leading-tight">
             Hello, I'm{" "}
-            <span className="bg-gradient-to-r from-indigo-400 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-[#FFD60A] px-2 border-2 border-black inline-block">
               Ivan
             </span>
           </h1>
 
-          <h2 className="text-2xl font-semibold mt-2 h-10">
+          <h2 className="text-2xl font-bold mt-3 h-10">
             <span>{text}</span>
-            <span className="animate-pulse">|</span>
+            <span className="animate-pulse font-light">|</span>
           </h2>
 
-          <p className="text-gray-400 mt-4">
-            I build elegant, fast, and modern web apps with React, TypeScript,
-            and Next.js.
+          <p className="mt-4 font-medium text-gray-800">
+            I build elegant, fast, and modern web apps with React, Next.js,
+            React Native, and many other tools!
           </p>
 
           <div className="mt-8 flex gap-4 justify-center">
             <a
               href="#experience"
-              className="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 transition shadow-lg shadow-indigo-600/30"
+              className="px-6 py-3 bg-[#FFD60A] border-[3px] border-black font-black uppercase text-sm
+                         shadow-[4px_4px_0_#000]
+                         hover:shadow-[2px_2px_0_#000] hover:translate-x-[2px] hover:translate-y-[2px]
+                         active:shadow-none active:translate-x-[4px] active:translate-y-[4px]
+                         transition-all duration-150 ease-out select-none"
             >
               Experience
             </a>
             <a
               href="#contact"
-              className="px-6 py-3 rounded-xl border border-gray-600 hover:border-indigo-500 transition"
+              className="px-6 py-3 bg-white border-[3px] border-black font-black uppercase text-sm
+                         shadow-[4px_4px_0_#000]
+                         hover:shadow-[2px_2px_0_#000] hover:translate-x-[2px] hover:translate-y-[2px]
+                         active:shadow-none active:translate-x-[4px] active:translate-y-[4px]
+                         transition-all duration-150 ease-out select-none"
             >
               Contact
             </a>
@@ -67,80 +103,43 @@ export default function LandingPage() {
         </section>
 
         {/* ABOUT */}
-        <section id="about" className="mb-10">
-          <h3 className="text-xl font-bold mb-2">About Me</h3>
-          <p className="bg-gradient-to-r from-indigo-200 via-white-200 to-indigo-200 bg-clip-text text-transparent">
-            Frontend Engineer with 6 years of experience building scalable,
-            responsive, and user-focused web applications. Skilled in React,
-            React Native, Next.js, and modern JavaScript frameworks, with a
-            proven track record of delivering high-quality features across
-            desktop, mobile web, and apps. Passionate about solving problems,
-            collaborating across teams, and staying current with emerging
-            technologies. Let's collaborate!
-          </p>
+        <section id="about" className="mb-8">
+          <div className="border-4 border-black bg-white p-6 shadow-[6px_6px_0_#000]">
+            <h3 className="text-xl font-black uppercase tracking-wide mb-3 pb-2 border-b-4 border-black">
+              About Me
+            </h3>
+            <p className="font-medium leading-relaxed text-gray-900">
+              Frontend Engineer with 7 years of experience building scalable,
+              responsive, and user-focused web applications. Skilled in React,
+              React Native, Next.js, and modern JavaScript frameworks, with a
+              proven track record of delivering high-quality features across
+              desktop, mobile web, and apps. Passionate about solving problems,
+              collaborating across teams, and staying current with emerging
+              technologies. Let's collaborate!
+            </p>
+          </div>
         </section>
 
         {/* EXPERIENCE */}
         <ExperienceSection />
 
-        {/* <section id="experience" className="mb-10">
-  <h3 className="text-xl font-bold mb-6">Experience</h3>
-
-  <div className="relative border-l-2 border-gray-700 pl-8 space-y-10">
-
-    <div className="relative">
-      <div
-        className="absolute -left-[13px] top-1 w-6 h-6 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 border-2 border-gray-900"
-      ></div>
-
-      <h4 className="font-semibold">Frontend Developer — Travelio</h4>
-      <p className="text-gray-400 text-sm">2019 – Present</p>
-      <p className="text-gray-400 mt-2">
-        Develop high-quality web and apps using Next.js and React Native.
-      </p>
-    </div>
-
-    <div className="relative">
-      <div
-        className="absolute -left-[13px] top-1 w-6 h-6 rounded-full bg-gradient-to-r from-blue-500 to-teal-400 border-2 border-gray-900"
-      ></div>
-
-      <h4 className="font-semibold">Frontend Developer — Mileapp</h4>
-      <p className="text-gray-400 text-sm">2019</p>
-      <p className="text-gray-400 mt-2">
-        Develop a landing page and web applications using Vue.js.
-      </p>
-    </div>
-
-  </div>
-</section> */}
-
         {/* SKILLS */}
-        <section id="skills" className="mb-10">
-          <h3 className="text-xl font-bold mb-4">Skills</h3>
-          <div className="flex flex-wrap gap-2">
-            {[
-              "HTML",
-              "css",
-              "React",
-              "React Native",
-              "Next.js",
-              "TypeScript",
-              "TailwindCSS",
-              "Redux",
-              "UI/UX",
-              "Node.js",
-              "Express",
-              "GIT",
-              "Unit Testing",
-            ].map((s) => (
-              <span
-                key={s}
-                className="px-3 py-1 bg-gray-900 border border-gray-700 rounded-lg text-sm"
-              >
-                {s}
-              </span>
-            ))}
+        <section id="skills" className="mb-8">
+          <div className="border-4 border-black bg-white p-6 shadow-[6px_6px_0_#000]">
+            <h3 className="text-xl font-black uppercase tracking-wide mb-4 pb-2 border-b-4 border-black">
+              Skills
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {SKILLS.map((s, i) => (
+                <span
+                  key={s}
+                  className={`wiggle px-3 py-1 border-[2px] border-black font-bold text-sm
+                              shadow-[2px_2px_0_#000] ${SKILL_COLORS[i % SKILL_COLORS.length]}`}
+                >
+                  {s}
+                </span>
+              ))}
+            </div>
           </div>
         </section>
 
