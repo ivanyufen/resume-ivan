@@ -2,17 +2,21 @@ import "./App.css";
 import { useTypewriter } from "./hooks/useTypewriter";
 import ContactSection from "./components/Contact";
 import ExperienceSection from "./components/Experience";
+import Footer from "./components/Footer";
 import { useEffect } from "react";
 
 const SKILLS = [
   "HTML",
   "CSS",
+  "Javascript",
   "React",
   "React Native",
   "Next.js",
   "TailwindCSS",
   "Vite",
   "Vue.js",
+  "Firebase",
+  "Google Console",
   "SEO",
   "Redux",
   "UI/UX",
@@ -106,7 +110,7 @@ export default function LandingPage() {
         <section id="about" className="mb-8">
           <div className="border-4 border-black bg-white p-6 shadow-[6px_6px_0_#000]">
             <h3 className="text-xl font-black uppercase tracking-wide mb-3 pb-2 border-b-4 border-black">
-              About Me
+              About
             </h3>
             <p className="font-medium leading-relaxed text-gray-900">
               Frontend Engineer with 7 years of experience building scalable,
@@ -145,6 +149,8 @@ export default function LandingPage() {
 
         {/* CONTACT */}
         <ContactSection />
+
+        <Footer />
       </div>
     </div>
   );
