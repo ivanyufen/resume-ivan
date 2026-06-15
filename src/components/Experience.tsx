@@ -38,10 +38,10 @@ export default function ExperienceSection() {
           />
           <ExperienceCard
             title="Full-Stack Developer & Business Analyst (Intern)"
-            company="Nutrifood"
+            company="Nutrifood Indonesia"
             companyLink="https://www.linkedin.com/company/pt-nutrifood-indonesia"
             date="2019"
-            desc="Developed landing pages and internal tools using Vue.js."
+            desc="Developed internal web application using Ruby on Rails and SQL, and Analyze user requirements to optimize internal business processes."
             accent={ACCENT_COLORS[2]}
           />
           <ExperienceCard
