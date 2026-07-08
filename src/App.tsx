@@ -8,24 +8,40 @@ import { useEffect } from "react";
 const SKILLS = [
   "HTML",
   "CSS",
-  "Javascript",
-  "React",
-  "React Native",
-  "Next.js",
-  "TailwindCSS",
-  "Vite",
-  "Vue.js",
-  "Firebase",
-  "Google Console",
-  "SEO",
-  "Redux",
-  "UI/UX",
-  "Node.js",
-  "Express.js",
-  "GIT",
-  "Unit Testing",
+  "JavaScript",
   "TypeScript",
-  "Agentic AI",
+  "SQL",
+  "React",
+  "Next.js",
+  "React Native",
+  "Tailwind CSS",
+  "Vite",
+  "TanStack",
+  "Vue.js",
+  "Redux",
+  "Zustand",
+  "Express.js",
+  "Node.js",
+  "Codex",
+  "Claude Code",
+  "DeepSeek",
+  "MySQL",
+  "PostgreSQL",
+  "Supabase",
+  "MongoDB",
+  "Firebase",
+  "Cloudinary",
+  "CDN",
+  "Chrome Lighthouse",
+  "SEO Optimization",
+  "MoEngage",
+  "Git",
+  "Google Search Console",
+  "Bitbucket",
+  "Jira",
+  "GitHub",
+  "Vercel",
+  "Netlify",
 ];
 
 const SKILL_COLORS = [
@@ -77,11 +93,6 @@ export default function LandingPage() {
             <span className="animate-pulse font-light">|</span>
           </h2>
 
-          <p className="mt-4 font-medium text-gray-800">
-            I build elegant, fast, and modern web apps with React, Next.js,
-            React Native, and many other tools!
-          </p>
-
           <div className="mt-8 flex gap-4 justify-center">
             <a
               href="#experience"
@@ -113,13 +124,15 @@ export default function LandingPage() {
               About
             </h3>
             <p className="font-medium leading-relaxed text-gray-900">
-              Frontend Engineer with 7 years of experience building scalable,
-              responsive, and user-focused web applications. Skilled in React,
-              React Native, Next.js, and modern JavaScript frameworks, with a
-              proven track record of delivering high-quality features across
-              desktop, mobile web, and apps. Passionate about solving problems,
-              collaborating across teams, and staying current with emerging
-              technologies. Let's collaborate!
+              Software Engineer with 7 years of experience specializing in
+              frontend architecture across both web and mobile platforms.
+              Dedicated to building and scaling high-performance user interfaces
+              that support thousands of daily active users. Drives the full
+              frontend lifecycle, translating complex design into modular,
+              reusable UI components, and active engineering applications for
+              optimal runtime performance and core web vitals. I work
+              cross-functionally with Product, QA, and Design to ship reliable
+              and user-centric products that create impact and solve problems.
             </p>
           </div>
         </section>

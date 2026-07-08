@@ -13,44 +13,62 @@ export default function ExperienceSection() {
 
         <div className="flex flex-col gap-4">
           <ExperienceCard
-            title="Senior Software Engineer (Frontend)"
-            company="Travelio"
+            title="Senior Software Engineer (Front End)"
+            company="PT Horizon Internusa Persada / Travelio"
             companyLink="https://www.linkedin.com/company/travelio-com"
-            date="2026 – Present"
-            desc="Lead architecture and development of scalable web and mobile applications using Next.js and React Native, driving frontend best practices."
+            date="Jan 2026 – Present"
+            desc={[
+              "Lead end-to-end development for Travelio's multi-platform web and mobile apps.",
+              "Partner with Product, QA, and UI/UX to refine requirements, reduce technical risk, and deliver high-impact features.",
+              "Optimize frontend performance, core web vitals, SEO, and the v2 redesign across Homepage, Search Result, and Property Detail pages.",
+            ]}
             accent={ACCENT_COLORS[0]}
           />
           <ExperienceCard
-            title="Software Engineer (Frontend)"
-            company="Travelio"
+            title="Software Engineer (Front End)"
+            company="PT Horizon Internusa Persada / Travelio"
             companyLink="https://www.linkedin.com/company/travelio-com"
-            date="2019 – 2026"
-            desc="Maintain and develop high impact web and mobile app using Next.js and RN, collaborating with Product and UI/UX to solve user problem and enhancing the product experience."
+            date="Nov 2019 – Jan 2026"
+            desc={[
+              "Translated complex UI/UX designs into scalable, pixel-perfect interfaces using React, Next.js, and React Native.",
+              "Created and maintained scalable RESTful APIs behind the core consumer application.",
+              "Built booking, payment, search, filtering, recommendation, and automated notification features across web and mobile.",
+            ]}
             accent={ACCENT_COLORS[0]}
           />
           <ExperienceCard
-            title="Software Engineer (Frontend)"
-            company="Mileapp"
+            title="Software Engineer (Front End)"
+            company="PT Paket Informasi Digital / MileApp"
             companyLink="https://www.linkedin.com/company/mileapp"
-            date="2019"
-            desc="Developed landing pages and web tools using Vue.js."
+            date="Feb 2019 – Nov 2019"
+            desc={[
+              "Developed responsive web applications for e-commerce shipment and supply chain logistics workflows.",
+              "Transformed UI/UX designs into web apps and improved engagement through landing page implementation.",
+              "Maintained quality through bug fixes, legacy refactors, unit testing, and frontend feature updates.",
+            ]}
             accent={ACCENT_COLORS[1]}
           />
           <ExperienceCard
-            title="Full-Stack Developer & Business Analyst (Intern)"
-            company="Nutrifood Indonesia"
-            companyLink="https://www.linkedin.com/company/pt-nutrifood-indonesia"
-            date="2019"
-            desc="Developed internal web application using Ruby on Rails and SQL, and Analyze user requirements to optimize internal business processes."
-            accent={ACCENT_COLORS[2]}
+            title="IT Support (Intern)"
+            company="International Games Broadcast Service (IGBS)"
+            companyLink="https://www.linkedin.com/company/hbs"
+            date="Jul 2018 – Sep 2018"
+            desc={[
+              "Diagnosed and resolved on-site hardware and software issues to maintain operational continuity.",
+              "Configured and deployed devices so incoming IGBS personnel could work immediately.",
+            ]}
+            accent={ACCENT_COLORS[3]}
           />
           <ExperienceCard
-            title="IT Support (Volunteer)"
-            company="IGBS Asian Games / HBS"
-            companyLink="https://www.linkedin.com/company/hbs"
-            date="2018"
-            desc="Maintained and troubleshot computer systems and networks for Asian Games 2018."
-            accent={ACCENT_COLORS[3]}
+            title="Web Developer and Business Analyst (Intern)"
+            company="Nutrifood Indonesia"
+            companyLink="https://www.linkedin.com/company/pt-nutrifood-indonesia"
+            date="Aug 2017 – Feb 2018"
+            desc={[
+              "Developed an internal web application using Ruby on Rails based on business requirements.",
+              "Conducted business analysis to gather user pain points and define actionable software solutions.",
+            ]}
+            accent={ACCENT_COLORS[2]}
           />
         </div>
       </div>
@@ -70,7 +88,7 @@ function ExperienceCard({
   company: string;
   companyLink?: string;
   date: string;
-  desc: string;
+  desc: string[];
   accent: string;
 }) {
   const ref = useRef(null);
@@ -113,7 +131,16 @@ function ExperienceCard({
           {date}
         </span>
       </div>
-      <p className="mt-2 text-sm font-medium text-gray-900">{desc}</p>
+      <ul className="mt-3 space-y-2 text-left text-sm font-medium text-gray-900">
+        {desc.map((item) => (
+          <li key={item} className="flex gap-2">
+            <span aria-hidden="true" className="font-black">
+              -
+            </span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
     </motion.div>
   );
 }
