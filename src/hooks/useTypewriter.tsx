@@ -9,7 +9,7 @@ export function useTypewriter(words: string[], pause = 1500) {
   useEffect(() => {
     const current = words[wordIndex];
 
-    let timeout = setTimeout(
+    const timeout = setTimeout(
       () => {
         if (isDeleting) {
           setText(current.substring(0, charIndex - 1));
