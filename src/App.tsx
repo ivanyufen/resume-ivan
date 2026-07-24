@@ -3,58 +3,84 @@ import { useTypewriter } from "./hooks/useTypewriter";
 import ContactSection from "./components/Contact";
 import ExperienceSection from "./components/Experience";
 import Footer from "./components/Footer";
-import { useEffect } from "react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  type MotionValue,
+} from "framer-motion";
+import { useEffect, useRef } from "react";
 
-const SKILLS = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "SQL",
-  "React",
-  "Next.js",
-  "React Native",
-  "Tailwind CSS",
-  "Vite",
-  "TanStack",
-  "Vue.js",
-  "Redux",
-  "Zustand",
-  "Express.js",
-  "Node.js",
-  "Codex",
-  "Claude Code",
-  "DeepSeek",
-  "MySQL",
-  "PostgreSQL",
-  "Supabase",
-  "MongoDB",
-  "Firebase",
-  "Cloudinary",
-  "CDN",
-  "Chrome Lighthouse",
-  "SEO Optimization",
-  "MoEngage",
-  "Git",
-  "Google Search Console",
-  "Visual Studio Code",
-  "ESLint",
-  "New Relic",
-  "Bitbucket",
-  "Jira",
-  "GitHub",
-  "Vercel",
-  "Netlify",
+const SKILL_GROUPS = [
+  {
+    name: "Fundamental",
+    color: "bg-[#FFD60A]",
+    skills: ["HTML", "CSS", "JavaScript", "TypeScript", "SQL"],
+  },
+  {
+    name: "Frontend",
+    color: "bg-[#C8F56A]",
+    skills: [
+      "React",
+      "Next.js",
+      "React Native (Android and iOS)",
+      "Tailwind CSS",
+      "TanStack",
+      "Vue.js",
+      "Redux",
+      "Zustand",
+      "Vite",
+      "Browser's API",
+    ],
+  },
+  {
+    name: "Backend",
+    color: "bg-[#00F5D4]",
+    skills: ["Express.js", "Node.js"],
+  },
+  {
+    name: "AI Tools",
+    color: "bg-[#FFB3C6]",
+    skills: ["Codex", "Claude Code", "DeepSeek"],
+  },
+  {
+    name: "Database",
+    color: "bg-[#A0D9FF]",
+    skills: ["MySQL", "PostgreSQL", "Supabase", "MongoDB"],
+  },
+  {
+    name: "Tools & Optimization",
+    color: "bg-[#FFC987]",
+    skills: [
+      "Console",
+      "Visual Studio Code",
+      "ESLint",
+      "New Relic",
+      "Firebase",
+      "Cloudinary",
+      "CDN",
+      "Chrome Lighthouse",
+      "SEO Optimization",
+      "MoEngage",
+      "Git",
+      "Google Search",
+    ],
+  },
+  {
+    name: "Project Tools and Deployment",
+    color: "bg-[#FFB3C6]",
+    skills: ["Bitbucket", "Jira", "GitHub", "Vercel", "Netlify"],
+  },
+  {
+    name: "Languages",
+    color: "bg-[#C8F56A]",
+    skills: ["English (Fluent, TOEFL iBT 92/120)", "Indonesia (Native)"],
+  },
 ];
 
-const SKILL_COLORS = [
-  "bg-[#FFD60A]",
-  "bg-[#C8F56A]",
-  "bg-[#00F5D4]",
-  "bg-[#FFB3C6]",
-  "bg-[#A0D9FF]",
-  "bg-[#FFC987]",
-];
+const ABOUT_TEXT =
+  "Software Engineer with 7 years of experience specializing in frontend architecture across both web and mobile platforms. Dedicated to building and scaling high-performance user interfaces that support thousands of daily active users. Drives the full frontend lifecycle, translating complex design into modular, reusable UI components, and active engineering applications for optimal runtime performance and core web vitals. I work cross-functionally with Product, QA, and Design to ship reliable and user-centric products that create impact and solve problems.";
+const ABOUT_WORDS = ABOUT_TEXT.split(" ");
 
 export default function LandingPage() {
   const text = useTypewriter([
@@ -69,7 +95,7 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div className="min-h-screen w-full bg-[#FFF9E6] text-black flex justify-center items-start py-10 px-4">
+    <div id="top" className="min-h-screen w-full bg-[#FFF9E6] text-black flex justify-center items-start pt-10 pb-24 px-4">
       <div className="w-full max-w-lg">
         {/* Profile picture */}
         <div className="flex justify-center mb-8">
@@ -118,27 +144,20 @@ export default function LandingPage() {
               Contact
             </a>
           </div>
+
+          <a
+            href="#about"
+            className="mt-8 inline-flex flex-col items-center gap-1 text-xs font-black uppercase tracking-widest hover:text-gray-600 transition-colors"
+          >
+            <span>Scroll to explore</span>
+            <span aria-hidden="true" className="animate-bounce text-2xl leading-none">
+              ↓
+            </span>
+          </a>
         </section>
 
         {/* ABOUT */}
-        <section id="about" className="mb-8">
-          <div className="border-4 border-black bg-white p-6 shadow-[6px_6px_0_#000]">
-            <h3 className="text-xl font-black uppercase tracking-wide mb-3 pb-2 border-b-4 border-black">
-              About
-            </h3>
-            <p className="font-medium leading-relaxed text-gray-900">
-              Software Engineer with 7 years of experience specializing in
-              frontend architecture across both web and mobile platforms.
-              Dedicated to building and scaling high-performance user interfaces
-              that support thousands of daily active users. Drives the full
-              frontend lifecycle, translating complex design into modular,
-              reusable UI components, and active engineering applications for
-              optimal runtime performance and core web vitals. I work
-              cross-functionally with Product, QA, and Design to ship reliable
-              and user-centric products that create impact and solve problems.
-            </p>
-          </div>
-        </section>
+        <AboutSection />
 
         {/* EXPERIENCE */}
         <ExperienceSection />
@@ -149,15 +168,24 @@ export default function LandingPage() {
             <h3 className="text-xl font-black uppercase tracking-wide mb-4 pb-2 border-b-4 border-black">
               Skills
             </h3>
-            <div className="flex flex-wrap gap-2">
-              {SKILLS.map((s, i) => (
-                <span
-                  key={s}
-                  className={`wiggle px-3 py-1 border-[2px] border-black font-bold text-sm
-                              shadow-[2px_2px_0_#000] ${SKILL_COLORS[i % SKILL_COLORS.length]}`}
-                >
-                  {s}
-                </span>
+            <div className="space-y-5">
+              {SKILL_GROUPS.map((group) => (
+                <div key={group.name}>
+                  <h4 className="mb-2 font-black text-sm uppercase tracking-wide">
+                    {group.name}
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {group.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className={`wiggle px-3 py-1 border-[2px] border-black font-bold text-sm
+                                    shadow-[2px_2px_0_#000] ${group.color}`}
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -170,4 +198,60 @@ export default function LandingPage() {
       </div>
     </div>
   );
+}
+
+function AboutSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start 70%", "end 55%"],
+  });
+
+  return (
+    <section
+      ref={sectionRef}
+      id="about"
+      className="relative mb-8 h-[calc(100svh-1.5rem)] min-h-[440px]"
+    >
+      <div className="sticky top-6">
+        <div className="border-4 border-black bg-white p-6 shadow-[6px_6px_0_#000]">
+          <div className="flex items-end justify-between gap-4 mb-3 pb-2 border-b-4 border-black">
+            <h3 className="text-xl font-black uppercase tracking-wide">
+              About
+            </h3>
+          </div>
+          <p className="font-medium leading-relaxed">
+            {ABOUT_WORDS.map((word, index) => (
+              <HighlightWord
+                key={`${word}-${index}`}
+                word={word}
+                index={index}
+                progress={scrollYProgress}
+              />
+            ))}
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function HighlightWord({
+  word,
+  index,
+  progress,
+}: {
+  word: string;
+  index: number;
+  progress: MotionValue<number>;
+}) {
+  const start = (index / (ABOUT_WORDS.length - 1)) * 0.8;
+  const color = useTransform(
+    progress,
+    [start, start + 0.2],
+    ["#d1d5db", "#111827"],
+  );
+  const opacity = useTransform(progress, [start, start + 0.2], [0.45, 1]);
+
+  return <motion.span style={{ color, opacity }}>{word} </motion.span>;
 }

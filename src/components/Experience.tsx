@@ -26,7 +26,7 @@ export default function ExperienceSection() {
               "Drive performance and modernization initiatives, including lazy loading for homepage sections to eliminate dozens of simultaneous API calls on load and upgrading legacy dependencies.",
               "Improve SEO through keyword optimization and structured content updates across important supply pages.",
             ]}
-            accent={ACCENT_COLORS[0]}
+            accent={ACCENT_COLORS[1]}
           />
           <ExperienceCard
             title="Software Engineer (Frontend)"
