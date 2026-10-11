@@ -15,7 +15,7 @@ const SKILL_GROUPS = [
   {
     name: "Fundamental",
     color: "bg-[#FFD60A]",
-    skills: ["HTML", "CSS", "JavaScript", "TypeScript", "SQL"],
+    skills: ["HTML", "CSS", "JavaScript", "TypeScript", "SQL", "NoSQL"],
   },
   {
     name: "Frontend",
@@ -25,12 +25,14 @@ const SKILL_GROUPS = [
       "Next.js",
       "React Native (Android and iOS)",
       "Tailwind CSS",
+      "Vite",
       "TanStack",
       "Vue.js",
       "Redux",
       "Zustand",
-      "Vite",
-      "Browser's API",
+      "WEB APIs",
+      "Socket.io",
+      "WebRTC",
     ],
   },
   {
@@ -52,18 +54,17 @@ const SKILL_GROUPS = [
     name: "Tools & Optimization",
     color: "bg-[#FFC987]",
     skills: [
-      "Console",
-      "Visual Studio Code",
-      "ESLint",
-      "New Relic",
       "Firebase",
       "Cloudinary",
       "CDN",
       "Chrome Lighthouse",
-      "SEO Optimization",
+      "SEO",
       "MoEngage",
       "Git",
-      "Google Search",
+      "Google Search Console",
+      "Visual Studio Code",
+      "ESLint",
+      "New Relic",
     ],
   },
   {
@@ -74,7 +75,7 @@ const SKILL_GROUPS = [
   {
     name: "Languages",
     color: "bg-[#C8F56A]",
-    skills: ["English (Fluent, TOEFL iBT 92/120)", "Indonesia (Native)"],
+    skills: ["English (Fluent, TOEFL iBT 92/120)", "Indonesian (Native)"],
   },
 ];
 
