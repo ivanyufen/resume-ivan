@@ -19,12 +19,11 @@ export default function ExperienceSection() {
             date="Jan 2026 - Present"
             companyDescription="Travelio is Indonesia's largest online platform for short-to long-term furnished apartment, villa, and house rentals, offering end-to-end property management services."
             desc={[
-              "Lead the end-to-end development workflow of Travelio's multi-platform apps, ensuring seamless performance across web and mobile environments.",
-              "Partner with Product, QA, and UI/UX to refine product requirements, mitigate technical risks, and deliver high-impact features that improve user experience and business KPI.",
-              "Optimize frontend performance and core web vitals to ensure fast load times and smooth interactions across diverse devices.",
-              "Handle frontend development for the v2 redesign across Homepage, Search Result, and Property Detail pages, translating Figma designs into production UI for App and Mobile Web platforms.",
-              "Drive performance and modernization initiatives, including lazy loading for homepage sections to eliminate dozens of simultaneous API calls on load and upgrading legacy dependencies.",
-              "Improve SEO through keyword optimization and structured content updates across important supply pages.",
+              "Architected a custom real-time chat and VoIP calling system in React Native using WebRTC and WebSockets, replacing paid third-party services and saving the company millions of IDR in monthly operational costs",
+              "Led the end-to-end development workflow of multi-platform applications, ensuring seamless performance and architectural consistency across web and mobile environments",
+              "Drove technical modernization and performance initiatives, implementing lazy loading to eliminate dozens of simultaneous API calls on load, optimize Core Web Vitals, and upgrade deprecated dependencies",
+              "Partnered cross-functionally with Product, QA, and Design to refine requirements, mitigate technical risks, and deliver high-impact features that directly improved user experience and business KPIs",
+              "Owned the frontend architecture for the v2 redesign across core conversion funnels (Homepage, Search, Property Details), translating complex Figma designs into production UI for App and Mobile Web",
             ]}
             accent={ACCENT_COLORS[1]}
           />
