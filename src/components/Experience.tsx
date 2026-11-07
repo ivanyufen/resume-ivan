@@ -19,7 +19,7 @@ export default function ExperienceSection() {
             date="Jan 2026 - Present"
             companyDescription="Travelio is Indonesia's largest online platform for short-to long-term furnished apartment, villa, and house rentals, offering end-to-end property management services."
             desc={[
-              "Slashed operational expenses by IDR 200 million monthly by architecting and deploying an in-app chat feature (React Native, WebRTC, WebSockets, Push Notification), successfully removing costly third-party vendor dependencies",
+              "Slashed operational expenses by IDR 200 million monthly by architecting and deploying an in-app chat feature, successfully removing costly third-party vendor dependencies",
               "Streamlined field operations and the guest check-in experience by engineering a custom VoIP call, directly improving communication efficiency and ease of use for on-site operational team",
               "Boosted Core Web Vitals and overall application speed by driving critical technical modernization initiatives, effectively eliminating dozens of simultaneous API bottlenecks on initial load via strategic lazy loading",
               "Accelerated the delivery of features that successfully moved business KPIs by proactively mitigating technical risks through strategic, cross-functional alignment with Product, QA, and Design teams",
