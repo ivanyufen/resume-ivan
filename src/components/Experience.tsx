@@ -19,11 +19,11 @@ export default function ExperienceSection() {
             date="Jan 2026 - Present"
             companyDescription="Travelio is Indonesia's largest online platform for short-to long-term furnished apartment, villa, and house rentals, offering end-to-end property management services."
             desc={[
-              "Architected a custom real-time chat and VoIP calling system in React Native using WebRTC and WebSockets, replacing paid third-party services and saving the company millions of IDR in monthly operational costs",
-              "Led the end-to-end development workflow of multi-platform applications, ensuring seamless performance and architectural consistency across web and mobile environments",
-              "Drove technical modernization and performance initiatives, implementing lazy loading to eliminate dozens of simultaneous API calls on load, optimize Core Web Vitals, and upgrade deprecated dependencies",
-              "Partnered cross-functionally with Product, QA, and Design to refine requirements, mitigate technical risks, and deliver high-impact features that directly improved user experience and business KPIs",
-              "Owned the frontend architecture for the v2 redesign across core conversion funnels (Homepage, Search, Property Details), translating complex Figma designs into production UI for App and Mobile Web",
+              "Slashed operational expenses by IDR 200 million monthly by architecting and deploying an in-app chat feature (React Native, WebRTC, WebSockets, Push Notification), successfully removing costly third-party vendor dependencies",
+              "Streamlined field operations and the guest check-in experience by engineering a custom VoIP call, directly improving communication efficiency and ease of use for on-site operational team",
+              "Boosted Core Web Vitals and overall application speed by driving critical technical modernization initiatives, effectively eliminating dozens of simultaneous API bottlenecks on initial load via strategic lazy loading",
+              "Accelerated the delivery of features that successfully moved business KPIs by proactively mitigating technical risks through strategic, cross-functional alignment with Product, QA, and Design teams",
+              "Revitalized the UI/UX for core conversion funnels (Homepage, Search, Property Details) during the v2 redesign by owning the frontend architecture and flawlessly translating complex Figma designs into highly scalable production code for App and Mobile Web",
             ]}
             accent={ACCENT_COLORS[1]}
           />
@@ -34,11 +34,10 @@ export default function ExperienceSection() {
             date="Nov 2019 - Jan 2026"
             companyDescription="Travelio is Indonesia's largest online platform for short-to long-term furnished apartment, villa, and house rentals, offering end-to-end property management services."
             desc={[
-              "Translated complex UI/UX designs into scalable, pixel-perfect interfaces using React, Next.js, and React Native, while establishing best practices for design system implementation and component reusability.",
-              "Created and maintained scalable RESTful APIs behind the core consumer application.",
-              "Built and shipped booking and payment features such as Smart Doorlock sync, Add-On booking purchasing and scheduling, Internet Fixed Line payment options, and automated push notification/reminder flows for postcharge and utility payments.",
-              "Implemented search and discovery enhancements such as filtering by price range, tower, and facilities, sorting logic, and recommendation logic improvements to increase booking conversion.",
-              "Collaborated with Product, QA, and UI/UX teams to resolve bugs and UI issues, including a dedicated pre-release hardening pass for iOS/Android App Store submission.",
+              "Elevated UI consistency and accelerated development workflows by establishing a scalable design system and translating complex UI/UX designs into pixel-perfect, highly reusable components across React, Next.js, and React Native",
+              "Powered the core consumer application's reliability and growth by engineering and maintaining robust, highly scalable RESTful APIs to handle high-volume traffic",
+              "Drove higher booking conversions and optimized user discovery by overhauling search mechanics, introducing advanced filtering, dynamic sorting, and refined recommendation algorithms",
+              "Secured flawless iOS and Android App Store releases by orchestrating rigorous pre-release hardening cycles and aligning Product, QA, and UI/UX teams to eliminate critical functional and UI bottlenecks",
             ]}
             accent={ACCENT_COLORS[0]}
           />
@@ -49,9 +48,9 @@ export default function ExperienceSection() {
             date="Feb 2019 - Nov 2019"
             companyDescription="MileApp is a SaaS logistics and field service platform that helps companies optimize delivery routes, track couriers in real time, and manage end-to-end supply chain operations."
             desc={[
-              "Developed responsive web applications that streamlined end-to-end e-commerce shipment processes and enhanced supply chain logistics workflows.",
-              "Transformed complex UI/UX designs into web apps, improving user engagement through attractive landing pages.",
-              "Maintained quality by periodically troubleshooting critical runtime bugs, refactoring legacy components, creating unit tests, and adapting frontend features to evolving user requirements.",
+              "Optimized supply chain logistics and end-to-end e-commerce shipments by engineering responsive, high-performance web applications that significantly reduced operational friction",
+              "Boosted user engagement and strengthened digital presence by transforming complex UI/UX design into interactive, fast-loading web applications and high-converting landing pages",
+              "Maintained system stability and reduced technical debt by systematically refactoring legacy components, establishing rigorous unit testing protocols, and proactively resolving critical runtime bottlenecks",
             ]}
             accent={ACCENT_COLORS[1]}
           />
@@ -62,8 +61,8 @@ export default function ExperienceSection() {
             date="Jul 2018 - Sep 2018"
             companyDescription="IGBS is a joint venture between HBS and IMG that serves as host broadcasters for major multi-sport events."
             desc={[
-              "Diagnosed and resolved on-site hardware and software issues to maintain operational continuity.",
-              "Managed the configuration and deployment of devices to ensure immediate readiness for incoming IGBS personnel.",
+              "Diagnosed and resolved on-site hardware and software issues to maintain operational continuity",
+              "Managed the configuration and deployment of devices to ensure immediate readiness for incoming IGBS personnel",
             ]}
             accent={ACCENT_COLORS[3]}
           />
@@ -74,8 +73,8 @@ export default function ExperienceSection() {
             date="Aug 2017 - Feb 2018"
             companyDescription="Nutrifood is a leading Indonesian health F&B manufacturer, known for brands such as Tropicana Slim, NutriSari, L-Men, and HiLo."
             desc={[
-              "Developed an internal web application using Ruby on Rails according to business requirements and technical implementation needs.",
-              "Conducted business analysis to gather user pain points and find actionable software solutions.",
+              "Developed an internal web application using Ruby on Rails, according to business requirements and technical implementation",
+              "Conducted business analysis to gather user pain points, and find an actionable software solution",
             ]}
             accent={ACCENT_COLORS[2]}
           />

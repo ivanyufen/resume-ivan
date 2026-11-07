@@ -30,7 +30,7 @@ export default function Footer() {
         <p className="font-black text-lg">Wanna know more detail?</p>
         <a
           href={CV_PATH}
-          download="Ivan Yufen Stefanus - CV FrontEnd Engineer 2026.pdf"
+          download="Ivan Yufen Stefanus - CV SoftwareEngineer 2027.pdf"
           className="wiggle mt-4 mx-auto flex w-fit items-center justify-center gap-2 px-5 py-3 bg-white border-[3px] border-black font-black uppercase text-sm
                      shadow-[4px_4px_0_#000]
                      hover:shadow-[2px_2px_0_#000] hover:translate-x-[2px] hover:translate-y-[2px]
