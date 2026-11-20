@@ -48,7 +48,7 @@ const SKILL_GROUPS = [
   {
     name: "Database",
     color: "bg-[#A0D9FF]",
-    skills: ["MySQL", "PostgreSQL", "Supabase", "MongoDB"],
+    skills: ["MySQL", "PostgreSQL", "Supabase", "MongoDB", "Redis"],
   },
   {
     name: "Tools & Optimization",
@@ -96,7 +96,10 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div id="top" className="min-h-screen w-full bg-[#FFF9E6] text-black flex justify-center items-start pt-10 pb-24 px-4">
+    <div
+      id="top"
+      className="min-h-screen w-full bg-[#FFF9E6] text-black flex justify-center items-start pt-10 pb-24 px-4"
+    >
       <div className="w-full max-w-lg">
         {/* Profile picture */}
         <div className="flex justify-center mb-8">
@@ -151,7 +154,10 @@ export default function LandingPage() {
             className="mt-8 inline-flex flex-col items-center gap-1 text-xs font-black uppercase tracking-widest hover:text-gray-600 transition-colors"
           >
             <span>Scroll to explore</span>
-            <span aria-hidden="true" className="animate-bounce text-2xl leading-none">
+            <span
+              aria-hidden="true"
+              className="animate-bounce text-2xl leading-none"
+            >
               ↓
             </span>
           </a>
